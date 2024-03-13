@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
-public class Formulario extends JFrame {
+public class Formulario2 extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -29,7 +29,7 @@ public class Formulario extends JFrame {
 			public void run() {
 				try {
 					UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-					Formulario frame = new Formulario();
+					Formulario2 frame = new Formulario2();
 					frame.setLocationRelativeTo(null);
 					frame.setVisible(true);
 				} catch (Exception e) {
@@ -42,7 +42,7 @@ public class Formulario extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Formulario() {
+	public Formulario2() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -85,7 +85,11 @@ public class Formulario extends JFrame {
 	private void guardar()  {
 		try {
 			if(nombreField.getText().isBlank()) JOptionPane.showMessageDialog(this,  "El nombre no puede estar vacío", "ERROR", JOptionPane.ERROR_MESSAGE);
-			else if(edadField.getText().isBlank()) JOptionPane.showMessageDialog(this,  "Edad no puede estar vacía", "ERROR", JOptionPane.ERROR_MESSAGE);
+			else if(edadField.getText().isBlank()) {
+				DialogoEdad edad = new DialogoEdad();
+				edad.setLocationRelativeTo(this);
+				edad.setVisible(true);
+			}
 			else JOptionPane.showMessageDialog(this,  "Datos guardados correctamente", "Correcto", JOptionPane.PLAIN_MESSAGE);
 		} catch (HeadlessException e) {
 			// TODO Auto-generated catch block
