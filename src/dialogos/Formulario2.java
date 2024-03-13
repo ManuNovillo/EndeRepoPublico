@@ -84,7 +84,7 @@ public class Formulario2 extends JFrame {
 	
 	private void guardar()  {
 		try {
-			if(nombreField.getText().isBlank()) JOptionPane.showMessageDialog(this,  "El nombre no puede estar vacío", "ERROR", JOptionPane.ERROR_MESSAGE);
+			if(nombreField.getText().isBlank()) JOptionPane.showMessageDialog(this, "El nombre no puede estar vacío", "ERROR", JOptionPane.ERROR_MESSAGE);
 			else if(edadField.getText().isBlank()) {
 				DialogoEdad edad = new DialogoEdad();
 				edad.setLocationRelativeTo(this);
